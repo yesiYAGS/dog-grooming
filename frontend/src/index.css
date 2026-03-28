@@ -1,0 +1,271 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --brown:    #6b3f2a;
+  --brown-lt: #8b5535;
+  --cream:    #fdf6ee;
+  --sand:     #f0e0cc;
+  --text:     #2c1a0e;
+  --muted:    #7a5c46;
+  --radius:   10px;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  padding: 2.5rem 1rem 4rem;
+}
+
+/* ---- Header ---- */
+.header {
+  background: var(--brown);
+  padding: 1rem;
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* ---- Footer ---- */
+.footer {
+  background: var(--brown);
+  color: #d9bfae;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+/* ---- Container ---- */
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* ---- Hero ---- */
+.hero {
+  text-align: center;
+  padding: 3.5rem 1rem 2.5rem;
+}
+
+.hero h1 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  color: var(--brown);
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  color: var(--muted);
+  margin-bottom: 1.8rem;
+  font-size: 1.1rem;
+}
+
+/* ---- Servicios ---- */
+.servicios {
+  padding: 1rem 0 2rem;
+}
+
+.servicios h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--brown);
+  margin-bottom: 1.5rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.2rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--sand);
+  border-radius: var(--radius);
+  padding: 1.8rem 1.2rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(107,63,42,.07);
+}
+
+.card-icon {
+  font-size: 2.4rem;
+  margin-bottom: 0.7rem;
+}
+
+.card h3 {
+  color: var(--brown);
+  margin-bottom: 0.3rem;
+}
+
+.duracion {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.precio {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-top: 0.4rem;
+  color: var(--brown-lt);
+}
+
+/* ---- Button ---- */
+.btn {
+  display: inline-block;
+  background: var(--brown);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background: var(--brown-lt);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ---- Form ---- */
+.page-title {
+  font-size: 1.5rem;
+  color: var(--brown);
+  margin-bottom: 1.5rem;
+}
+
+.formulario {
+  background: #fff;
+  border: 1px solid var(--sand);
+  border-radius: var(--radius);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  max-width: 560px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.campo label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.campo input,
+.campo select {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #d5b89a;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: var(--cream);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.campo input:focus,
+.campo select:focus {
+  border-color: var(--brown);
+}
+
+.fila {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.error {
+  background: #fee;
+  border: 1px solid #f99;
+  color: #c00;
+  border-radius: 6px;
+  padding: 0.7rem 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ---- Confirmacion ---- */
+.confirmacion-box {
+  max-width: 480px;
+  margin: 2rem auto;
+  background: #fff;
+  border: 1px solid var(--sand);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(107,63,42,.08);
+}
+
+.check {
+  font-size: 3rem;
+  margin-bottom: 0.8rem;
+}
+
+.confirmacion-box h2 {
+  color: var(--brown);
+  margin-bottom: 0.6rem;
+}
+
+.confirmacion-box p {
+  color: var(--muted);
+  margin-bottom: 1.4rem;
+}
+
+.resumen {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.4rem;
+  text-align: left;
+}
+
+.resumen td {
+  padding: 0.5rem 0.7rem;
+  border-bottom: 1px solid var(--sand);
+  font-size: 0.95rem;
+}
+
+.resumen td:first-child {
+  color: var(--muted);
+  width: 40%;
+}
+
+.nota {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
