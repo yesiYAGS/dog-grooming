@@ -7,7 +7,7 @@ export default function Home() {
   const [servicios, setServicios] = useState([]);
 
   useEffect(() => {
-    fetch("/api/servicios")
+    fetch(`${import.meta.env.VITE_API_URL || ""}/api/servicios`)
       .then((r) => r.json())
       .then(setServicios);
   }, []);

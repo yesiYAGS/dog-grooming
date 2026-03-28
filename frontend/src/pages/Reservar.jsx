@@ -22,8 +22,8 @@ export default function Reservar() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("/api/servicios").then((r) => r.json()).then(setServicios);
-    fetch("/api/horarios").then((r) => r.json()).then(setHorarios);
+    fetch(`${import.meta.env.VITE_API_URL || ""}/api/servicios`).then((r) => r.json()).then(setServicios);
+    fetch(`${import.meta.env.VITE_API_URL || ""}/api/horarios`).then((r) => r.json()).then(setHorarios);
   }, []);
 
   function onChange(e) {
@@ -36,7 +36,7 @@ export default function Reservar() {
     setCargando(true);
 
     try {
-      const res = await fetch("/api/citas", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL || ""}/api/citas`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
